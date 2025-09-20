@@ -101,3 +101,23 @@ def format_output(data_dict: Dict[str, Any]) -> str:
 
     return "\n".join(lines)
 
+def main() -> None:
+    try:
+        raw_input = input().strip()
+        if not raw_input:
+            print("")
+            return
+
+        parsed_data = process_raw_data(raw_input)
+        business_data = apply_business_rulse(parsed_data)
+        transformed_data = transform_data(business_data)
+        output = format_output(transformed_data)
+
+        print(output)
+    except Exception as e:
+        print(f"Ошибка: {e}")
+
+
+if __name__ == "__main__":
+    main()
+юля какашка
